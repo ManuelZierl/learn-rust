@@ -1,0 +1,4 @@
+mod collatz;
+
+fn main() {
+}
