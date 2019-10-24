@@ -1,8 +1,10 @@
 mod collatz;
+mod quicksort;
 
 fn main()
 {
-    test_collatz()
+    test_collatz();
+    test_quicksort();
 }
 
 fn test_collatz()
@@ -15,4 +17,13 @@ fn test_collatz()
         println!("for n = {}, smallest i: {}", x, c2);
         assert!(c1.0 == c2);
     }
+}
+
+fn test_quicksort()
+{
+    let mut x:Vec<u32> = vec![3,4,71,4,6,1,3,5,7,5,45,9,7,65,100,67,74,24,6];
+
+    quicksort::quicksort(&mut x);
+    println!("{:?}", x);
+
 }
