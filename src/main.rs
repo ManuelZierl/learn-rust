@@ -3,10 +3,11 @@ mod quicksort;
 
 fn main()
 {
-    test_collatz();
+    //test_collatz();
     test_quicksort();
 }
 
+#[allow(dead_code)]
 fn test_collatz()
 {
     for x in 1..=100
@@ -19,6 +20,7 @@ fn test_collatz()
     }
 }
 
+#[allow(dead_code)]
 fn test_quicksort()
 {
     let mut x:Vec<u32> = vec![3,4,71,4,6,1,3,5,7,5,45,9,7,65,100,67,74,24,6];
