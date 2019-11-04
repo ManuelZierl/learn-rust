@@ -1,10 +1,15 @@
 mod collatz;
 mod quicksort;
+mod polynoms;
+
+use polynoms::Polynomial;
+
 
 fn main()
 {
     //test_collatz();
-    test_quicksort();
+    // test_quicksort();
+    test_polynoms();
 }
 
 #[allow(dead_code)]
@@ -28,4 +33,25 @@ fn test_quicksort()
     quicksort::quicksort(&mut x);
     println!("{:?}", x);
 
+}
+
+#[allow(dead_code)]
+fn test_polynoms()
+{
+    let x = Polynomial::new().add(1,3).add(-2,2).add(-11,1).add(12,0);
+    x.print();
+    println!("{}", x.newton(-4.));
+    println!("{}", x.newton(0.));
+    println!("{}", x.newton(2.35287527));
+
+    let x = Polynomial::new().add(1,3).add(-2,2).add(-5,1).add(6,0);
+    x.print();
+    println!("{}", x.newton(-3.));
+    println!("{}", x.newton(0.));
+    println!("{}", x.newton(4.));
+
+    let x = Polynomial::new().add(2,4).add(7,3).add(6,2).add(8,1).add(12,0);
+    x.print();
+    println!("{}", x.newton(0.));
+    println!("{}", x.newton(10.));
 }
